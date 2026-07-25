@@ -1,10 +1,15 @@
-{ ... }:
+{ pkgs, ... }:
 
+let
+  workGitignore = pkgs.writeText "gitignore-work" ''
+    .direnv/
+    .envrc
+    shell.nix
+  '';
+in
 {
   programs.git = {
     enable = true;
-
-    ignores = [ ".direnv/" ".envrc" "shell.nix" ];
 
     settings = {
       user = {
@@ -20,7 +25,10 @@
     includes = [
       {
         condition = "gitdir:~/Work/";
-        contents.user.email = "jacopo.trompeo@synesthesia.it";
+        contents = {
+          user.email = "jacopo.trompeo@synesthesia.it";
+          core.excludesFile = "${workGitignore}";
+        };
       }
     ];
   };
