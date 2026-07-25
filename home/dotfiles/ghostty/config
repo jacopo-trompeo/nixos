@@ -1,0 +1,13 @@
+font-size = 15
+
+window-padding-x = 10
+window-padding-y = 5
+
+copy-on-select = false
+
+shell-integration-features = no-cursor
+cursor-style = block
+
+confirm-close-surface = false
+
+theme = noctalia

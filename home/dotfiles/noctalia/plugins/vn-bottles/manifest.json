@@ -1,0 +1,12 @@
+{
+  "id": "vn-bottles",
+  "name": "VN Launcher (Bottles)",
+  "version": "1.0.0",
+  "description": "Launch Japanese VN reading sessions from the Bottles \"Visual Novels\" bottle (VN + Textractor + texthooker + Anki) via jp-bottles",
+  "tags": ["Launcher"],
+  "author": "Jacopo",
+  "license": "MIT",
+  "entryPoints": { "main": "Main.qml", "launcherProvider": "LauncherProvider.qml" },
+  "dependencies": { "plugins": [] },
+  "metadata": { "commandPrefix": "vn", "defaultSettings": {} }
+}

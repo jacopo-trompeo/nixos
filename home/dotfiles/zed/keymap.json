@@ -1,0 +1,57 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace && !GitPanel",
+    "bindings": {
+      "space f f": "file_finder::Toggle",
+      "space f l": "pane::DeploySearch",
+    },
+  },
+  {
+    "context": "Workspace || Editor || GitPanel",
+    "bindings": {
+      "ctrl-shift-g": "git_panel::Toggle",
+      "ctrl-b": "project_panel::Toggle",
+      "ctrl-l": "agent::Toggle",
+    },
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual)",
+    "bindings": {
+      "space q": "pane::CloseActiveItem",
+      "tab": "pane::ActivateNextItem",
+      "shift-tab": "pane::ActivatePreviousItem",
+      "ctrl-a": ["workspace::SendKeystrokes", "g g shift-v shift-g"],
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-b": "workspace::ToggleRightDock",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "ctrl-shift-g": "workspace::ToggleRightDock",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "c a": "editor::ToggleCodeActions",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "g .": "editor::ToggleCodeActions",
+    },
+  },
+]
