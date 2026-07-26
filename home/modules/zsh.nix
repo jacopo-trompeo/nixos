@@ -48,6 +48,14 @@
         echo "==> Godot"
         rm -rf ~/.local/share/godot/* 2>/dev/null
       }
+
+      autoload -Uz add-zsh-hook
+      _skip_history() {
+        emulate -L zsh
+        [[ "$PWD" == "$HOME/Games" || "$PWD" == "$HOME/Games"/* ]] && return 1
+        return 0
+      }
+      add-zsh-hook zshaddhistory _skip_history
     ''
       (lib.mkAfter ''
         eval "$(${pkgs.zoxide}/bin/zoxide init zsh)"
