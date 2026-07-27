@@ -12,6 +12,7 @@ let
     "rmpc"
     "tmux"
     "noctalia"
+    "zsh"
   ];
 in
 

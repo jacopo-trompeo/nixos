@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 
 {
   programs.zsh = {
@@ -7,63 +7,12 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    shellAliases = {
-      rb = "nh os switch";
-      rbu = "nh os switch -u";
-      ls = "eza -lh --group-directories-first --icons=auto";
-      lsa = "ls -la";
-      lt = "eza --tree --level=2 --long --icons --git";
-      lta = "lt -a";
-      ff = "fzf --preview 'bat --style=numbers --color=always {}'";
-      cd = "z";
-      cat = "bat";
-    };
-
-    initContent = lib.mkMerge [ ''
-      try() {
-        if [ $# -eq 0 ]; then
-          echo "usage: try <pkg> [pkg...]   (ephemeral nix shell, nothing installed)" >&2
-          return 1
-        fi
-        local specs=()
-        local p
-        for p in "$@"; do specs+=("nixpkgs#$p"); done
-        nix shell "''${specs[@]}"
-      }
-
-      update() {
-        echo "==> nix packages"
-        (cd ~/nixos && nh os switch -u)
-        echo "==> firmware"
-        fwupdmgr refresh && fwupdmgr update
-        echo "==> done"
-      }
-
-      cleanup-game-saves() {
-        echo "==> Ren'Py"
-        rm -rf ~/.renpy/* 2>/dev/null
-        echo "==> Unity"
-        rm -rf ~/.config/unity3d/* 2>/dev/null
-        rm -rf ~/.local/share/unity3d/* 2>/dev/null
-        echo "==> Godot"
-        rm -rf ~/.local/share/godot/* 2>/dev/null
-      }
-
-      autoload -Uz add-zsh-hook
-      _skip_history() {
-        emulate -L zsh
-        [[ "$PWD" == "$HOME/Games" || "$PWD" == "$HOME/Games"/* ]] && return 1
-        return 0
-      }
-      add-zsh-hook zshaddhistory _skip_history
-    ''
-      (lib.mkAfter ''
-        eval "$(${pkgs.zoxide}/bin/zoxide init zsh)"
-      '')
-    ];
-
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
+
+    initContent = lib.mkAfter ''
+      source "${config.xdg.configHome}/zsh/rc.zsh"
+    '';
   };
 
   programs.starship.enable = true;

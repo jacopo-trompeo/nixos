@@ -23,6 +23,8 @@
     gdk-pixbuf
     cairo
     pango
+    fontconfig
+    freetype
     atk
     at-spi2-atk
     at-spi2-core
