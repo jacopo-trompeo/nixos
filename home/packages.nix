@@ -41,6 +41,15 @@
     nil
     gh
 
+    # neovim: formatters (conform) + treesitter cli; LSP servers via Mason
+    stylua
+    nixfmt
+    shfmt
+    ruff
+    prettierd
+    biome
+    tree-sitter
+
     # misc
     anki
     fastfetch

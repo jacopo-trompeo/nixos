@@ -18,8 +18,15 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  networking.firewall.enable = true;
+
+  zramSwap.enable = true;
 
   time.timeZone = "Europe/Rome";
+
+  i18n.extraLocaleSettings = {
+    LC_TIME = "it_IT.UTF-8";
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

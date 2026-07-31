@@ -15,6 +15,7 @@
   i18n.supportedLocales = [
     "C.UTF-8/UTF-8"
     "en_US.UTF-8/UTF-8"
+    "it_IT.UTF-8/UTF-8"
     "ja_JP.UTF-8/UTF-8"
   ];
 }

@@ -1,23 +1,13 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+local map = vim.keymap.set
 
-local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
+map("n", "<C-a>", "ggVG", { desc = "Select all" })
 
---- select all ---
-keymap.set("n", "<C-a>", "gg<S-v>G", opts)
+map("n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Split vertical" })
+map("n", "<leader>sh", "<cmd>split<cr>", { desc = "Split horizontal" })
+map("n", "<leader>se", "<C-w>=", { desc = "Equalize splits" })
 
---- split windows ---
-keymap.set("n", "<leader>sv", "<C-w>v", opts)
-keymap.set("n", "<leader>sh", "<C-w>s", opts)
-keymap.set("n", "<leader>se", "<C-w>=", opts)
+map("n", "<leader>ch", "<cmd>nohlsearch<cr>", { desc = "Clear highlight" })
+map("n", "<leader>q", "<cmd>bd<cr>", { desc = "Close buffer" })
 
---- do not yank with x ---
-keymap.set("n", "x", '"_x', opts)
-
---- clear highlight search ---
-keymap.set("n", "<leader>ch", ":nohl<CR>", opts)
-
---- paste without yanking ---
-keymap.set("v", "p", '"_dP', opts)
+map("n", "x", '"_x')
+map("x", "p", '"_dP')
