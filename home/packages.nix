@@ -7,6 +7,12 @@
     vesktop
     slack
 
+    # privacy / cloud
+    filen-desktop
+    proton-pass
+    proton-vpn
+    rclone
+
     # terminal
     ghostty
     neovim

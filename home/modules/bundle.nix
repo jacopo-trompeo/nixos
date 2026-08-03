@@ -6,5 +6,6 @@
     ./ssh.nix
     ./direnv.nix
     ./vn.nix
+    ./filen.nix
   ];
 }

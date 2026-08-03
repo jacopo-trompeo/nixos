@@ -1,4 +1,4 @@
-alias rb='nh os switch'
+alias rebuild='nh os switch'
 alias ls='eza -lh --group-directories-first --icons=auto'
 alias lsa='ls -la'
 alias lt='eza --tree --level=2 --long --icons --git'

@@ -8,6 +8,6 @@
     ./dev.nix
     ./quirks.nix
     ./brave.nix
-    ./dns.nix
+    ./syncthing.nix
   ];
 }
