@@ -289,5 +289,6 @@ layer-rule {
 spawn-at-startup "noctalia-shell"
 spawn-at-startup "lxqt-policykit-agent"
 spawn-at-startup "tailscale" "systray"
+spawn-at-startup "protonvpn-app"
 
 include "./noctalia.kdl"

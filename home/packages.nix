@@ -8,10 +8,8 @@
     slack
 
     # privacy / cloud
-    filen-desktop
     proton-pass
     proton-vpn
-    rclone
 
     # terminal
     ghostty
@@ -31,6 +29,7 @@
     rmpc
     mpc
     pavucontrol
+    tuxguitar
 
     # shell
     noctalia-shell

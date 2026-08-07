@@ -9,5 +9,6 @@
     ./quirks.nix
     ./brave.nix
     ./syncthing.nix
+    ./printing.nix
   ];
 }

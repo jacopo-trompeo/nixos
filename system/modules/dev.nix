@@ -52,5 +52,7 @@
     libxshmfence
     libxt
     libxmu
+    libsecret
+    glib
   ];
 }

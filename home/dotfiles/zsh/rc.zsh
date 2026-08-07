@@ -28,7 +28,7 @@ update() {
 cleanup-game-saves() {
   echo "==> Ren'Py"; rm -rf ~/.renpy/* 2>/dev/null
   echo "==> Unity";  rm -rf ~/.config/unity3d/* ~/.local/share/unity3d/* 2>/dev/null
-  echo "==> Godot";  rm -rf ~/.local/share/godot/* 2>/dev/null
+  echo "==> Godot";  rm -rf ~/.local/share/godot/* ~/.local/share/Godot/* 2>/dev/null
 }
 
 SHUSH_FILTER="prisma:warn|Please manually install OpenSSL"
